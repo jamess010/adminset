@@ -5,7 +5,7 @@
 安装mysql  
 ### 2）docker-compose up -d adminset
 安装adminset，需要改以下内容：
-* adminset下，Dockerfile中的mysql, mongodb, redis的主机地址为宿主机地址
-* 改adminset->git->adminset->adminset.conf中，mysql的地址为宿主机地址
+* adminset下，Dockerfile中的MYSQL_HOST为宿主机地址
+* adminset->git->adminset->adminset.conf中，mysql, mongodb, redis的连接地址为宿主机地址
 ### 3）docker-compose up -d  
 启动所有的其它应用
