@@ -1,5 +1,5 @@
 # adminset
-本项目是adminset的Docker实现，adminset是一个基于python的开源运维监控项目, 项目地址是https://github.com/guohongze/adminset
+本项目是adminset的Docker实现，adminset是一个基于python的开源运维监控项目, 项目地址参看：https://github.com/guohongze/adminset
 
 ### 1）安装mysql 
 在server中运行：<br>
