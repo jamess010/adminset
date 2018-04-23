@@ -2,7 +2,7 @@
 本项目是adminset的Docker实现，adminset项目地址是https://github.com/guohongze/adminset
 
 ### 1）安装mysql 
-在server->adminset中运行：<br>
+在server中运行：<br>
 docker-compose up -d mysql
  
 ### 2）安装adminset
@@ -11,10 +11,10 @@ docker-compose up -d mysql
 * server->adminset下，Dockerfile中的MYSQL_HOST为宿主机地址
 * server->adminset->git->adminset->adminset.conf中，mysql, mongodb, redis的连接地址为宿主机地址
 
-然后运行：<br>
+然后在server中运行：<br>
 docker-compose up -d adminset
 ### 3）启动所有的其它应用
-server->adminset中运行：<br>
+在server中运行：<br>
 docker-compose up -d  
 
 ### 4）浏览器中输入：http://宿主机_ip
