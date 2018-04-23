@@ -1,0 +1,54 @@
+version: '3'
+services:
+  mysql:
+    build: mysql
+    image: adminset/mysql
+    ports:
+     - 3306:3306
+    restart: unless-stopped
+    volumes:
+     - /opt/mysql/data:/var/lib/mysql
+    environment:
+     - MYSQL_ROOT_PASSWORD=123456  
+  redis:
+    build: redis
+    image: adminset/redis
+    restart: unless-stopped
+    ports:
+     - 6379:6379
+  mongodb:
+    build: mongodb
+    image: adminset/mongodb
+    restart: unless-stopped
+    volumes:
+     - /opt/mongodb/data:/data/db
+    ports:
+     - 27017:27017
+  nginx:
+    build: nginx
+    image: adminset/nginx
+    restart: unless-stopped
+    volumes:
+      - adminset_dir:/adminset
+    environment:
+      - HOSTIP=127.0.0.1
+    ports: 
+      - 80:80
+  adminset:
+    build: adminset
+    image: adminset/adminset
+    restart: always
+    environment:
+     - MYSQL_PASSWORD=123456  
+    links:
+     - mysql
+    depends_on: 
+     - mysql
+     - mongodb
+    ports:
+     - 8000:8000
+    volumes:
+     - adminset_dir:/var/opt/adminset/
+
+volumes:
+   adminset_dir:
