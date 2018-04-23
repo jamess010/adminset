@@ -19,5 +19,5 @@ docker-compose up -d  
 
 ### 4）浏览器中输入：http://宿主机_ip
 user=admin, password=Adminset123
-### 5) 安装客户端软件
+### 5) 在需要监控的机器中安装客户端软件
 将client中内容拷贝到需要监控的机器中，运行sudo ./install.sh
