@@ -9,7 +9,7 @@ docker-compose up -d mysql
 
 需要改以下内容：
 * server->adminset下，Dockerfile中的MYSQL_HOST为宿主机地址
-* server->adminset->git->adminset->adminset.conf中，mysql, mongodb, redis的连接地址为宿主机地址
+* server->adminset->git->adminset->adminset.conf中，改mysql, mongodb, redis的连接地址为宿主机地址
 
 然后在server中运行：<br>
 docker-compose up -d adminset
